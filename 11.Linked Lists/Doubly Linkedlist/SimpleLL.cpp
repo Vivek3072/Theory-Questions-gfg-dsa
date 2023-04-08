@@ -4,11 +4,13 @@ using namespace::std;
 struct Node{
     int data;
     // Self referential structure 
+    Node *prev;
     Node *next;
 
     // constructor 
     Node(int x){
         data=x;
+        prev=NULL;
         next=NULL;
     }
 };
@@ -20,10 +22,21 @@ int main(){
 
     head->next = temp1;
     temp1->next = temp2;
+    // temp2->next==NULL;
 
-    cout<<head->data<<" "<<head->next<<endl;
-    cout<<temp1->data<<" "<<temp1->next<<endl;
-    cout<<temp2->data<<" "<<temp2->next<<endl;
+    // head->prev=NULL;
+    temp1->prev = head;
+    temp2->prev = temp1;
+
+    cout<<head<<" "<<head->next<<endl;
+    cout<<temp1<<" "<<temp1->next<<endl;
+    cout<<temp2<<" "<<temp2->next<<endl;
+
+    cout<<endl;
+
+    cout<<head<<" "<<head->prev<<endl;
+    cout<<temp1<<" "<<temp1->prev<<endl;
+    cout<<temp2<<" "<<temp2->prev<<endl;
 
     // cout<<head->next; 
     return 0;
