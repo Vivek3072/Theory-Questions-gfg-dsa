@@ -2,7 +2,8 @@
 #include <vector>
 using namespace std;
 
-void Merge(vector<int> &nums, int low, int mid, int high){
+void Merge(vector<int> &nums, int low, int mid, int high)
+{
     int n1 = mid - low + 1;
     int n2 = high - mid;
 
@@ -16,33 +17,25 @@ void Merge(vector<int> &nums, int low, int mid, int high){
 
     int i = 0, j = 0, k = low;
 
-    while (i < n1 && j < n2){
-        if (LNums[i] <= RNums[j]){
-            nums[k] = LNums[i];
-            i++;
-        }
-        else{
-            nums[k] = RNums[j];
-            j++;
-        }
-        k++;
+    while (i < n1 && j < n2)
+    {
+        if (LNums[i] <= RNums[j])
+            nums[k++] = LNums[i++];
+        else
+            nums[k++] = RNums[j++];
     }
 
-    while (i < n1){
-        nums[k] = LNums[i];
-        i++;
-        k++;
-    }
+    while (i < n1)
+        nums[k++] = LNums[i++];
 
-    while (j < n2){
-        nums[k] = RNums[j];
-        j++;
-        k++;
-    }
+    while (j < n2)
+        nums[k++] = RNums[j++];
 }
 
-void MergeSort(vector<int> &nums, int low, int high){
-    if (low < high){
+void MergeSort(vector<int> &nums, int low, int high)
+{
+    if (low < high)
+    {
         int mid = low + (high - low) / 2;
         MergeSort(nums, low, mid);
         MergeSort(nums, mid + 1, high);
@@ -50,7 +43,8 @@ void MergeSort(vector<int> &nums, int low, int high){
     }
 }
 
-int main(){
+int main()
+{
     int n;
     cin >> n;
     vector<int> nums(n);
