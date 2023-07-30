@@ -47,11 +47,12 @@ TreeNode* deleteRecursive(TreeNode* root, int x) {
     else {
         if (root->left == NULL) {
             TreeNode* temp = root->right;
-            free(root);
+            delete root;
             return temp;
         } else if (root->right == NULL) {
             TreeNode* temp = root->left;
-            free(root);
+            // free(root);
+            delete root;
             return temp;
         }else {
             // CASE 3: Node with 2 children
