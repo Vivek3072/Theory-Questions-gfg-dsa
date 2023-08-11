@@ -19,6 +19,7 @@ public:
     }
 
     // Function to insert an element at the front of the deque
+    // we can get new front by decreasing by 1 in circular array, as to maintain that front never becomes '-1' we add capacity in it to get new_front as (front - 1 + capacity)%capacity;
     void insertFront(int x) {
         if (isFull()) {
             cout << "Deque is full. Cannot insert at the front." << endl;
@@ -36,7 +37,7 @@ public:
             cout << "Deque is full. Cannot insert at the rear." << endl;
             return;
         }
-
+        // we can get current rear as, rear = (front + size - 1 ) % capacity;
         int new_rear = (front + size) % capacity;
         arr[new_rear] = x;
         size++;
