@@ -1,6 +1,7 @@
 #include<bits/stdc++.h> 
 using namespace std; 
 
+// TIME COMPLEXITY OVERALL IS O(V+E)
 void BFS(vector<int> adj[], int s, bool visited[]) {
  	queue<int>  q;
 	
