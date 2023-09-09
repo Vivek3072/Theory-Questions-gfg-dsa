@@ -1,1 +1,0 @@
- greaters.empty()
