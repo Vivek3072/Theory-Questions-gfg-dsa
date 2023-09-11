@@ -1,6 +1,12 @@
 #include<iostream>
 using namespace std;
 
+/*
+    INORDER : LEFT -> ROOT -> RIGHT
+    PREORDER : ROOT -> LEFT -> RIGHT
+    POST ORDER : LEFT -> RIGHT -> ROOT
+*/
+
 class TreeNode{
 public:
     int key;
@@ -43,9 +49,9 @@ int main(){
     root->left = new TreeNode(20);
     root->right = new TreeNode(30);
     root->left->left = new TreeNode(40);
-    cout<<"INORDER TRAVERSAL : "; root->inorder(root); cout<<endl; 
-    cout<<"PREORDER TRAVERSAL : "; root->preorder(root); cout<<endl;
-    cout<<"POSTORDER TRAVERSAL : "; root->postorder(root); cout<<endl;
+    cout<<"INORDER TRAVERSAL : LEFT -> ROOT -> RIGHT : "; root->inorder(root); cout<<endl; 
+    cout<<"PREORDER TRAVERSAL : ROOT -> LEFT -> RIGHT : "; root->preorder(root); cout<<endl;
+    cout<<"POSTORDER TRAVERSAL : LEFT -> RIGHT -> ROOT : "; root->postorder(root); cout<<endl;
 
     return 0;
 }

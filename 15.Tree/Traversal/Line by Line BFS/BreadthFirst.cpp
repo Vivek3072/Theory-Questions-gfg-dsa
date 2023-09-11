@@ -17,7 +17,9 @@ public:
         // O(height of tree x n)
     }
     
-    void levelOrder(TreeNode *root){
+    
+    //O(n) Time complexity , THeta(width) auxillary space || O(n) auxillary space
+    void levelOrderLineByLine(TreeNode *root){
         if (root == nullptr) 
             return;
         queue<TreeNode *> q;
@@ -42,7 +44,7 @@ public:
         }
     }
     
-    //Also called as LEVEL ORDER Traversal
+    //Also called as LEVEL ORDER Traversal, same as above
     void breadthFirst(TreeNode *root){
         if(root == NULL) 
             return;

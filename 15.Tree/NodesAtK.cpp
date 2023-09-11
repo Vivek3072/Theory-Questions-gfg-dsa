@@ -1,3 +1,54 @@
+// #include <iostream>
+// using namespace std;
+
+// class TreeNode {
+// private:
+//     int key;
+//     TreeNode* left;
+//     TreeNode* right;
+// public:
+//     //Constructor initializer list,
+//     TreeNode(int val) : key(val), left(NULL), right(NULL) {}
+
+//     void setLeftKey(int val) {
+//         if (left == NULL)
+//             left = new TreeNode(val);
+//         else
+//             left->setLeftKey(val);
+//     }
+
+//     void setRightKey(int val) {
+//         if (right == NULL)
+//             right = new TreeNode(val);
+//         else
+//             right->setRightKey(val);
+//     }
+
+//Time complexity is O(n), auxillary space = O(height of tree)
+//     void printNodeAtK(TreeNode* root, int k) {
+//         if (root == NULL)
+//             return;
+//         if (k == 0)
+//             cout << root->key << " ";
+//         printNodeAtK(root->left, k - 1);
+//         printNodeAtK(root->right, k - 1);
+//     }
+// };
+
+// int main() {
+//     TreeNode* root = new TreeNode(10);
+//     root->setLeftKey(20);
+//     root->setRightKey(30);
+//     root->setLeftKey(25);
+//     root->setRightKey(40);
+
+//     root->printNodeAtK(root, 2);
+//     return 0;
+// }
+
+
+
+
 #include<iostream>
 using namespace std;
 

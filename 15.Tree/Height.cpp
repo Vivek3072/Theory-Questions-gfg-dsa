@@ -8,7 +8,7 @@ public:
     TreeNode(int val){
         left = NULL;
         right = NULL;
-        int key =  val;
+        key =  val;
     }
 
     int heightTree(TreeNode *root){
