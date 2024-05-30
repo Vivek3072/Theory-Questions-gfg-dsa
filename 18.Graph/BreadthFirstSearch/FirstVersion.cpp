@@ -1,6 +1,7 @@
 #include<bits/stdc++.h> 
 using namespace std; 
 
+// THIS CODE IS FOR CONNECTED GRAPHS 
 void BFS(vector<int> adj[], int V, int s) { 
 	bool visited[V]; 
 	for(int i = 0; i < V; i++) 
@@ -48,6 +49,7 @@ int main() {
 	addEdge(adj,1,3);
 	addEdge(adj,3,4);
 	addEdge(adj,2,4);
+	// addEdge(adj,5,6); // won't print this disconnected component
 
 	cout << "Following is Breadth First Traversal: "<< endl; 
 	BFS(adj,V,0); 

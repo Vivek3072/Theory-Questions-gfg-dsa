@@ -23,15 +23,18 @@ void BFS(vector<int> adj[], int s, bool visited[]) {
 	} 
 }
 
-void BFSDin(vector<int> adj[], int V){
+int BFSDin(vector<int> adj[], int V){
     bool visited[V+1] = {false}; //to keep track of all the vertex that has been added to the queue
 	// for(int i = 0;i<V; i++) 
 	// 	visited[i] = false;
-		
+	int connectedComponents = 0;
     for(int i=0;i<V;i++){
-        if(visited[i]==false)
+        if(visited[i]==false){
             BFS(adj,i,visited);
+            connectedComponents++;
+        }
     }
+    return connectedComponents;
 }
 
 void addEdge(vector<int> adj[], int u, int v){
@@ -52,7 +55,8 @@ int main() {
 	// 0,1,2,3 are one component are 4,5,6 are another component in the graph
 
 	cout << "Following is Breadth First Traversal: "<< endl; 
-	BFSDin(adj,V); 
-
+	int ans = BFSDin(adj,V); 
+    cout<<"\n";
+    cout<<"The no. of connected components in the graph is :"<<ans<<endl;
 	return 0; 
 } 
